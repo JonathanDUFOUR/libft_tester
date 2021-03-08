@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/07 18:16:41 by jodufour          #+#    #+#              #
-#    Updated: 2021/03/07 19:29:28 by jodufour         ###   ########.fr        #
+#    Updated: 2021/03/07 23:56:11 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,17 @@ SRCS		:=	main.c						\
 				test_ft_find_next_prime.c	\
 				test_ft_indexof.c			\
 				test_ft_int_size.c			\
+				test_ft_int_sort.c			\
+				test_ft_isalnum.c			\
+				test_ft_isalpha.c			\
+				test_ft_isascii.c			\
+				test_ft_ischarset.c			\
+				test_ft_isdigit.c			\
+				test_ft_islower.c			\
+				test_ft_isprime.c			\
+				test_ft_isprint.c			\
+				test_ft_isspace.c			\
+				test_ft_isupper.c			\
 
 OBJS		:=	${SRCS:.c=.o}
 

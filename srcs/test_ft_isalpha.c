@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_int_size.c                                 :+:      :+:    :+:   */
+/*   test_ft_isalpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 19:19:39 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/07 23:39:01 by jodufour         ###   ########.fr       */
+/*   Created: 2021/03/07 23:54:35 by jodufour          #+#    #+#             */
+/*   Updated: 2021/03/08 00:43:42 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	test_ft_int_size(void)
+void	test_ft_isalpha(void)
 {
+	char c;
+
 	ft_putendl("************************");
 	ft_putendl("*                      *");
-	ft_putendl("*      FT_INT_SIZE     *");
+	ft_putendl("*      FT_ISALPHA      *");
 	ft_putendl("*                      *");
 	ft_putendl("************************");
 
-	ft_putendl("Test 00");
-	ft_putstr("ft_int_size(0) == ");
-	ft_putnbr(ft_int_size(0));
-	ft_putstr("\n\n");
-
-	ft_putendl("Test 01");
-	ft_putstr("ft_int_size(-42) == ");
-	ft_putnbr(ft_int_size(-42));
-	ft_putstr("\n\n");
-
-	ft_putendl("Test 02");
-	ft_putstr("ft_int_size(2147483647) == ");
-	ft_putnbr(ft_int_size(2147483647));
-	ft_putstr("\n\n");
-
-	ft_putendl("Test 03");
-	ft_putstr("ft_int_size(-2147483648) == ");
-	ft_putnbr(ft_int_size(-2147483648));
+	ft_putendl("Full Test");
+	c = -128;
+	while (c < 127)
+	{
+		ft_putstr("ft_isalpha('");
+		ft_putchar(c);
+		ft_putstr("') == ");
+		ft_putnbr(ft_isalpha(c));
+		ft_putstr("  |  ascii tested -> ");
+		ft_putnbr(c);
+		ft_putchar('\n');
+		++c;
+	}
+	ft_putstr("ft_isalpha('");
+	ft_putchar(c);
+	ft_putstr("') == ");
+	ft_putnbr(ft_isalpha(c));
+	ft_putstr("  |  ascii tested -> ");
+	ft_putnbr(c);
 	ft_putstr("\n\n");
 }

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:00:38 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/07 23:02:11 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:50:09 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,16 @@ int	main(void)
 	test_ft_find_next_prime();
 	test_ft_indexof();
 	test_ft_int_size();
+	test_ft_int_sort();
+	test_ft_isalnum();
+	test_ft_isalpha();
+	test_ft_isascii();
+	test_ft_ischarset();
+	test_ft_isdigit();
+	test_ft_islower();
+	test_ft_isprime();
+	test_ft_isprint();
+	test_ft_isspace();
+	test_ft_isupper();
 	return (0);
 }

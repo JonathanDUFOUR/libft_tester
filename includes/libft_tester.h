@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 18:48:25 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/07 18:55:44 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:49:43 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,16 @@ void	test_ft_file_size(void);
 void	test_ft_find_next_prime(void);
 void	test_ft_indexof(void);
 void	test_ft_int_size(void);
+void	test_ft_int_sort(void);
+void	test_ft_isalnum(void);
+void	test_ft_isalpha(void);
+void	test_ft_isascii(void);
+void	test_ft_ischarset(void);
+void	test_ft_isdigit(void);
+void	test_ft_islower(void);
+void	test_ft_isprime(void);
+void	test_ft_isprint(void);
+void	test_ft_isspace(void);
+void	test_ft_isupper(void);
 
 #endif
