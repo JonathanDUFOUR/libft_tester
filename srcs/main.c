@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 19:00:38 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/07 23:50:09 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/03/08 02:16:14 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(void)
 	test_ft_isprint();
 	test_ft_isspace();
 	test_ft_isupper();
+
 	return (0);
 }
