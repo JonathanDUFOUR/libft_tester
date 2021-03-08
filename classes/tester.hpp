@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_isprime.c                                  :+:      :+:    :+:   */
+/*   tester.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 23:58:21 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/07 23:58:37 by jodufour         ###   ########.fr       */
+/*   Created: 2021/03/08 22:28:45 by jodufour          #+#    #+#             */
+/*   Updated: 2021/03/08 22:31:45 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#pragma once
 
-void	test_ft_isprime(void)
+class tester
 {
-	ft_putendl("************************");
-	ft_putendl("*                      *");
-	ft_putendl("*      FT_ISPRIME      *");
-	ft_putendl("*                      *");
-	ft_putendl("************************");
-}
+public:
+};

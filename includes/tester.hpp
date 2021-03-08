@@ -1,22 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_islower.c                                  :+:      :+:    :+:   */
+/*   tester.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 23:57:52 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/07 23:58:09 by jodufour         ###   ########.fr       */
+/*   Created: 2021/03/08 22:00:55 by jodufour          #+#    #+#             */
+/*   Updated: 2021/03/08 22:10:40 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#pragma once
 
-void	test_ft_islower(void)
-{
-	ft_putendl("************************");
-	ft_putendl("*                      *");
-	ft_putendl("*      FT_ISLOWER      *");
-	ft_putendl("*                      *");
-	ft_putendl("************************");
-}
+#include <cassert>

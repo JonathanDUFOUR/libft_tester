@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_isdigit.c                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 23:57:12 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/07 23:57:33 by jodufour         ###   ########.fr       */
+/*   Created: 2021/03/08 21:30:40 by jodufour          #+#    #+#             */
+/*   Updated: 2021/03/08 22:01:03 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <iostream>
+#include <cassert>
 
-void	test_ft_isdigit(void)
+int	main(int ac, char **av)
 {
-	ft_putendl("************************");
-	ft_putendl("*                      *");
-	ft_putendl("*      FT_ISDIGIT      *");
-	ft_putendl("*                      *");
-	ft_putendl("************************");
+	std::cout << "Hello World of Warcraft !" << std::endl;
+	return (0);
 }

@@ -6,72 +6,65 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/07 18:16:41 by jodufour          #+#    #+#              #
-#    Updated: 2021/03/07 23:56:11 by jodufour         ###   ########.fr        #
+#    Updated: 2021/03/08 22:27:46 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	tester
+CC			=	gcc -c -o
+CCPP		=	g++ -c -o
+LINKER		=	g++ -o
+MAKEDIR		=	mkdir -p
+# RM			=	rm -f
 
-LIBFT		=	libft/libft.a
-
-INCLUDES	=	includes	\
-				${dir ${LIBFT}}
+LIBFT		=	${HOME}/libft/libft.a
 
 SRCD		=	srcs/
 
-SRCS		:=	main.c						\
-				test_ft_atoi_base.c			\
-				test_ft_atoi.c				\
-				test_ft_atol.c				\
-				test_ft_bzero.c				\
-				test_ft_calloc.c			\
-				test_ft_cat.c				\
-				test_ft_convert_base.c		\
-				test_ft_cut_spaces.c		\
-				test_ft_file_size.c			\
-				test_ft_find_next_prime.c	\
-				test_ft_indexof.c			\
-				test_ft_int_size.c			\
-				test_ft_int_sort.c			\
-				test_ft_isalnum.c			\
-				test_ft_isalpha.c			\
-				test_ft_isascii.c			\
-				test_ft_ischarset.c			\
-				test_ft_isdigit.c			\
-				test_ft_islower.c			\
-				test_ft_isprime.c			\
-				test_ft_isprint.c			\
-				test_ft_isspace.c			\
-				test_ft_isupper.c			\
-
-OBJS		:=	${SRCS:.c=.o}
-
-SRCS		:=	${addprefix ${SRCD}, ${SRCS}}
-
 OBJD		=	objs/
 
-OBJS		:=	${addprefix ${OBJD}, ${OBJS}}
+CLSD		=	classes/
 
-CFLAGS		=	-Wall -Wextra ${addprefix -I, ${INCLUDES}}
+INCLUDES	=	\
+				${CLSD}			\
+				includes		\
+				${dir ${LIBFT}}
+
+COMFLAGS	:=	-Wall -Wextra ${addprefix -I, ${INCLUDES}}
+CFLAGS		:=	${COMFLAGS}
+CPPFLAGS	:=	${COMFLAGS}
 
 LDFLAGS		=	-L ${dir ${LIBFT}} -lft
 
-CC			=	gcc -c
+CLASSES		:=	tester
+CLASSES		:=	${addprefix ${CLSD}, ${CLASSES}}
+CLASSES		:=	${addsuffix .cpp, ${CLASSES}}
 
-LINKER		=	gcc
+SRCS		:=	main.cpp	\
 
-RM			=	rm -f
+OBJS		:=	${SRCS:.c=.o}
+OBJS		:=	${SRCS:.cpp=.o}
+OBJS		:=	${addprefix ${OBJD}, ${OBJS} ${CLASSES:.cpp=.o}}
+SRCS		:=	${addprefix ${SRCD}, ${SRCS}} ${CLASSES}
 
 
 ${NAME}:	${OBJS}
-	${LINKER} ${OBJS} ${LDFLAGS} -o ${NAME}
+	${LINKER} ${NAME} ${OBJS} ${LDFLAGS}
 
 all:	${NAME}
 
 ${OBJD}%.o:	${SRCD}%.c
-	mkdir -p ${dir $@}
-	${CC} ${CFLAGS} $< -o $@
+	${MAKEDIR} ${dir $@}
+	${CC} $@ ${CFLAGS} $<
 
+${OBJD}%.o:	${SRCD}%.cpp
+	${MAKEDIR} ${dir $@}
+	${CCPP} $@ ${CPPFLAGS} $<
+
+${OBJD}${CLSD}%.o:	${CLSD}%.cpp
+	${MAKEDIR} ${dir $@}
+	${CCPP} $@ ${CPPFLAGS} $<
+	
 clean:
 	${RM} ${OBJS}
 
