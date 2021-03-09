@@ -7,5 +7,5 @@ using namespace ftest;
 void	test::run(void)
 {
 	std::cout << "Running: '" << this->name << "'..." << std::endl;
-	throw std::string("THIS TEST IS INVALID !");
+	throw std::string("YOUR " + this->name + " IS INVALID !");
 }

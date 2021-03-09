@@ -4,8 +4,6 @@
 
 namespace	ftest {
 
-// typedef	int	t_monSuperType;
-
 class test
 {
 private:
