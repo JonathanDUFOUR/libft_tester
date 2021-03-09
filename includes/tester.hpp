@@ -1,15 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   tester.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 22:00:55 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/08 22:10:40 by jodufour         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #pragma once
 
 #include <cassert>
+#include "test.hpp"
+
+#define SUCCESS_STR	"\e[32m>>>SUCCESS<<<\e[0m"
+#define FAILURE_STR	"\e[31m>>>FAILURE<<<\e[0m"
+#define _CONCAT(_x, _y) (_x _y)
+

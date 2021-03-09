@@ -1,20 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:30:40 by jodufour          #+#    #+#             */
-/*   Updated: 2021/03/08 22:01:03 by jodufour         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <cassert>
+#include <string>
+#include <vector>
+#include <memory>
+#include "tester.hpp"
+#include "test.hpp"
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	std::cout << "Hello World of Warcraft !" << std::endl;
+	using testInstance = std::shared_ptr<ftest::test>;
+	//using newTestInstance = std::make_shared<ftest::test>;
+	// ftest::t_monSuperType pouic = 42;
+
+	std::vector<testInstance>	tests;
+
+	tests.push_back(std::make_shared<ftest::test>("TEST 01"));
+	tests.push_back(std::make_shared<ftest::test>("TEST 02"));
+	tests.push_back(std::make_shared<ftest::test>("TAMER"));
+
+	for (testInstance currentTest : tests)
+	{
+		try {
+			currentTest->run();
+			std::cout << _CONCAT("  ", SUCCESS_STR) << std::endl;
+		} catch (std::string &err) {
+			std::cout << "  \e[34m" << err << "\e[0m" << std::endl;
+			std::cout << _CONCAT("  ", FAILURE_STR) << std::endl;
+		}
+	}
 	return (0);
 }

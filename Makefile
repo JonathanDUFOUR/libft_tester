@@ -1,55 +1,44 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/03/07 18:16:41 by jodufour          #+#    #+#              #
-#    Updated: 2021/03/08 22:27:46 by jodufour         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME		=	tester
 CC			=	gcc -c -o
 CCPP		=	g++ -c -o
 LINKER		=	g++ -o
 MAKEDIR		=	mkdir -p
-# RM			=	rm -f
-
-LIBFT		=	${HOME}/libft/libft.a
+RM			=	rm -rf
 
 SRCD		=	srcs/
-
 OBJD		=	objs/
-
 CLSD		=	classes/
+
+LIBFT		=	${HOME}/libft/libft.a
 
 INCLUDES	=	\
 				${CLSD}			\
 				includes		\
 				${dir ${LIBFT}}
 
-COMFLAGS	:=	-Wall -Wextra ${addprefix -I, ${INCLUDES}}
+COMFLAGS	:=	-MD -MMD -Wall -Wextra ${addprefix -I , ${INCLUDES}}
 CFLAGS		:=	${COMFLAGS}
 CPPFLAGS	:=	${COMFLAGS}
 
 LDFLAGS		=	-L ${dir ${LIBFT}} -lft
 
-CLASSES		:=	tester
+CLASSES		:=	\
+				test
 CLASSES		:=	${addprefix ${CLSD}, ${CLASSES}}
 CLASSES		:=	${addsuffix .cpp, ${CLASSES}}
 
-SRCS		:=	main.cpp	\
+SRCS		:=	main.cpp
 
 OBJS		:=	${SRCS:.c=.o}
 OBJS		:=	${SRCS:.cpp=.o}
 OBJS		:=	${addprefix ${OBJD}, ${OBJS} ${CLASSES:.cpp=.o}}
 SRCS		:=	${addprefix ${SRCD}, ${SRCS}} ${CLASSES}
-
+INCD		:=	$(OBJS:.o=.d)
 
 ${NAME}:	${OBJS}
 	${LINKER} ${NAME} ${OBJS} ${LDFLAGS}
+
+-include ${INCD}
 
 all:	${NAME}
 
@@ -66,10 +55,10 @@ ${OBJD}${CLSD}%.o:	${CLSD}%.cpp
 	${CCPP} $@ ${CPPFLAGS} $<
 	
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJD}
 
 fclean:
-	${RM} ${OBJS}
+	${RM} ${OBJD}
 	${RM} ${NAME}
 
 re:	fclean all

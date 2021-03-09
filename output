@@ -1,0 +1,4 @@
+mkdir -p objs/
+g++ -c -o objs/main.o -MD -MMD -Wall -Wextra -I classes/ -I includes -I /home/jodufour/libft/ srcs/main.cpp
+mkdir -p objs/classes/
+g++ -c -o objs/classes/test.o -MD -MMD -Wall -Wextra -I classes/ -I includes -I /home/jodufour/libft/ classes/test.cpp
