@@ -23,7 +23,8 @@ CPPFLAGS	:=	${COMFLAGS}
 LDFLAGS		=	-L ${dir ${LIBFT}} -lft
 
 CLASSES		:=	\
-				test
+				test				\
+				testPrintFunctions
 CLASSES		:=	${addprefix ${CLSD}, ${CLASSES}}
 CLASSES		:=	${addsuffix .cpp, ${CLASSES}}
 
