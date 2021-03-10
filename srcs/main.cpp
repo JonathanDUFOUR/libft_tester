@@ -1,29 +1,25 @@
 #include <iostream>
-#include <cassert>
 #include <string>
-#include <vector>
-#include <memory>
-#include "testPrintFunctions.hpp"
+#include <cstdlib>
+#include <cstdio>
+#include <unistd.h>
+#include <pwd.h>
 #include "tester.hpp"
-#include "test.hpp"
 
-int	main(void)
+
+
+int	main(int ac, char *av[], char *env[])
 {
-	using testInstance = std::shared_ptr<ftest::test>;
-	//using newTestInstance = std::make_shared<ftest::test>;
+	std::string	libftPath;
+	std::string	home;
+	int			*tab;
 
-	ftest::testPrintFct			printTest("lol");
-	std::vector<testInstance>	tests;
+	(void)ac;
+	(void)av;
+	(void)env;
+	home = getHome();
+	libftPath = home + PATH_SEPARATOR + LIBFT_DIR;
+	std::cout << libftPath << std::endl;
 
-	for (testInstance currentTest : tests)
-	{
-		try {
-			currentTest->run();
-			std::cout << _CONCAT("  ", SUCCESS_STR) << std::endl;
-		} catch (std::string &err) {
-			std::cout << "  \e[34m" << err << "\e[0m" << std::endl;
-			std::cout << _CONCAT("  ", FAILURE_STR) << std::endl;
-		}
-	}
 	return (0);
 }

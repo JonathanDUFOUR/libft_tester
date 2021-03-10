@@ -1,5 +1,5 @@
 NAME		=	tester
-CC			=	gcc -c -o
+CC			=	g++ -c -o
 CCPP		=	g++ -c -o
 LINKER		=	g++ -o
 MAKEDIR		=	mkdir -p
@@ -23,8 +23,7 @@ CPPFLAGS	:=	${COMFLAGS}
 LDFLAGS		=	-L ${dir ${LIBFT}} -lft
 
 CLASSES		:=	\
-				test				\
-				testPrintFunctions
+				
 CLASSES		:=	${addprefix ${CLSD}, ${CLASSES}}
 CLASSES		:=	${addsuffix .cpp, ${CLASSES}}
 
