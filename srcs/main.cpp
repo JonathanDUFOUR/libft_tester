@@ -11,14 +11,11 @@
 int	main(int ac, char *av[], char *env[])
 {
 	std::string	libftPath;
-	std::string	home;
-	int			*tab;
 
 	(void)ac;
 	(void)av;
 	(void)env;
-	home = getHome();
-	libftPath = home + PATH_SEPARATOR + LIBFT_DIR;
+	libftPath = getLibDir();
 	std::cout << libftPath << std::endl;
 
 	return (0);

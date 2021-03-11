@@ -9,25 +9,24 @@ SRCD		=	srcs/
 OBJD		=	objs/
 CLSD		=	classes/
 
-LIBFT		=	${HOME}/libft/libft.a
-
 INCLUDES	=	\
 				${CLSD}			\
-				includes		\
-				${dir ${LIBFT}}
+				includes
 
 COMFLAGS	:=	-MD -MMD -Wall -Wextra ${addprefix -I , ${INCLUDES}}
 CFLAGS		:=	${COMFLAGS}
 CPPFLAGS	:=	${COMFLAGS}
 
-LDFLAGS		=	-L ${dir ${LIBFT}} -lft
+LDFLAGS		=	-lreadline
 
 CLASSES		:=	\
 				
 CLASSES		:=	${addprefix ${CLSD}, ${CLASSES}}
 CLASSES		:=	${addsuffix .cpp, ${CLASSES}}
 
-SRCS		:=	main.cpp
+SRCS		:=	\
+				main.cpp	\
+				utils.cpp	\
 
 OBJS		:=	${SRCS:.c=.o}
 OBJS		:=	${SRCS:.cpp=.o}
